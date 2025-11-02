@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle area calculator</title>
+</head>
+<body>
+    <a href="./Homepage.html">Click here to go back to homepage</a>
+    <h3>Triangle Area Calculator</h3>
+    <hr>
+    <form onsubmit="calculatearea(); return false;">
+        <div>
+
+            <label for="base" >Enter the base of triangle</label>
+            <input type="number"  id="base" placeholder="Base in meter" step="any">
+        </div>
+        <div>
+            <label for="length">Enter the length of triangle</label>
+            <input type="number" id="length" placeholder="length in meter" step="any">
+        </div>
+        <div id="result">
+
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        function calculatearea(){
+            // Ref
+            const baseref=document.querySelector("#base")
+            const lengthref=document.querySelector("#length")
+            // Value Extraction
+            let base= baseref.value 
+            let length=lengthref.value
+            // Type Casting
+            base=Number(base)
+            length=Number(length)
+            // Function Logic
+            const Area=(base*length)/2 
+            console.log(Area)
+            // Showing result in Div 
+            const divref=document.querySelector("#result")
+            divref.innerHTML= `The area of the triangle is : ${Area.toFixed(2)} m<sup>2</sup>`
+            
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bmi Calculator</title>
+</head>
+
+<body>
+    <a href="./Homepage.html">Click here to go back to homepage</a>
+    <h1>Bmi calculator</h1>
+    <hr>
+    <form onsubmit="calculatepercentage(); return false;">
+        <div>
+            <label for="height">Enter you height</label>
+            <input type="number" placeholder="Enter your heigt in m" id="height" step="any">
+        </div>
+        <div>
+            <label for="weight">Enter your weight</label>
+            <input type="number" placeholder="Enter your weight in kg" id="weight" step="any">
+        </div>
+        <button type="submit">Submit</button>
+        <div id="result"></div>
+    </form>
+
+
+    <script>
+        function calculatepercentage() {
+            // Ref
+            const heightref = document.querySelector("#height")
+            const weightref = document.querySelector("#weight")
+            //  Value Extraction
+            let height = heightref.value
+            let weight = weightref.value
+            // Type casting
+            height = Number(height)
+            weight = Number(weight)
+            // Function Logic
+            const bmi = weight / height ** 2
+            console.log(bmi)
+            // Showing result in div
+            const divref = document.querySelector("#result")
+            divref.innerText = "Your Bmi is: " + bmi.toFixed(2)
+        }
+
+
+
+    </script>
+
+    <script></script>
+</body>
+
+</html>
